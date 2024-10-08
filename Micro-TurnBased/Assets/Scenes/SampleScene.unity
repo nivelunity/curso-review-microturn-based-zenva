@@ -1233,6 +1233,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11504183ac4e90e44bf073fb88d25038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurHp: 25
+  MaxHp: 25
+  IsPlayer: 1
+  CombatActions: []
+  opponent: {fileID: 0}
 --- !u!1 &1046175965
 GameObject:
   m_ObjectHideFlags: 0
