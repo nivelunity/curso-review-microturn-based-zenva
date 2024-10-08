@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: Basic Hit (5 Damage)
   ActionType: 0
-  Damage: 0
+  Damage: 5
   ProjectilPrefab: {fileID: 0}
   HealAmount: 0

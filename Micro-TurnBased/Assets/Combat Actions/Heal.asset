@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e2dd4e6c7f6ed249809e3300acaa77d, type: 3}
   m_Name: Heal
   m_EditorClassIdentifier: 
-  DisplayName: 
+  DisplayName: Heal (5 Hp)
   ActionType: 0
   Damage: 0
   ProjectilPrefab: {fileID: 0}
-  HealAmount: 0
+  HealAmount: 5

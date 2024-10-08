@@ -154,7 +154,9 @@ MonoBehaviour:
   CurHp: 25
   MaxHp: 25
   IsPlayer: 0
-  CombatActions: []
+  CombatActions:
+  - {fileID: 11400000, guid: f0a64f0b58098c84285b1151e6ce9df0, type: 2}
+  - {fileID: 11400000, guid: 22ee76f330a285342a76083e0c704998, type: 2}
   opponent: {fileID: 916839832}
 --- !u!4 &43812113
 Transform:
@@ -1286,7 +1288,9 @@ MonoBehaviour:
   CurHp: 25
   MaxHp: 25
   IsPlayer: 1
-  CombatActions: []
+  CombatActions:
+  - {fileID: 11400000, guid: f0a64f0b58098c84285b1151e6ce9df0, type: 2}
+  - {fileID: 11400000, guid: 22ee76f330a285342a76083e0c704998, type: 2}
   opponent: {fileID: 43812112}
 --- !u!1 &1046175965
 GameObject:
