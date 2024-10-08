@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int CurHp;
+    public int MaxHp;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public bool IsPlayer;
+
+    public List<CombatAction> CombatActions = new List<CombatAction>();
+
+    [SerializeField] Character opponent;
+
+    private Vector3 startPos;
+    
 }
