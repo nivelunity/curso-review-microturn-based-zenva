@@ -23,17 +23,21 @@ public class Character : MonoBehaviour
 
     public void TakeDamage(int damageToTake)
     {
-        
+        CurHp -= damageToTake;
+        if(CurHp <= 0)
+            Die();
     }
 
     void Die()
     {
-        
+        Destroy(gameObject);
     }
 
     public void Heal(int healAmount)
     {
-        
+        CurHp += healAmount;
+        if (CurHp > MaxHp)
+            CurHp = MaxHp;
     }
 
     public void CastCombatAction(CombatAction combatAction)
