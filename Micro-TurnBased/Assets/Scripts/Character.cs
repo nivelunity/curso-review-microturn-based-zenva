@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,5 +15,29 @@ public class Character : MonoBehaviour
     [SerializeField] Character opponent;
 
     private Vector3 startPos;
-    
+
+    private void Start()
+    {
+        startPos = transform.position;
+    }
+
+    public void TakeDamage(int damageToTake)
+    {
+        
+    }
+
+    void Die()
+    {
+        
+    }
+
+    public void Heal(int healAmount)
+    {
+        
+    }
+
+    public void CastCombatAction(CombatAction combatAction)
+    {
+        
+    }
 }
