@@ -5,5 +5,13 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Combat Action", menuName = "New Combat Action")]
 public class CombatAction : ScriptableObject
 {
+   public enum Type
+   {
+      Attack,
+      Heal
+   }
+
+   public string DisplayName;
+   public Type ActionType;
    
 }
