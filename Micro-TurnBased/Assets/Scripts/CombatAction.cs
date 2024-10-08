@@ -2,17 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CombatAction : MonoBehaviour
+[CreateAssetMenu(fileName = "Combat Action", menuName = "New Combat Action")]
+public class CombatAction : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+   public enum Type
+   {
+      Attack,
+      Heal
+   }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   public string DisplayName;
+   public Type ActionType;
+
+   [Header("Damage")] 
+   public int Damage;
+   public GameObject ProjectilPrefab;
+
+   [Header("Heal")] 
+   public int HealAmount;
+
 }
