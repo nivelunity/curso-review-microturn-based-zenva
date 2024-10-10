@@ -1,17 +1,39 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private AnimationCurve healChanceCurve;
+    [SerializeField] private Character character;
+
+    private void OnEnable()
+    {
+        throw new NotImplementedException();
+    }
+
+    private void OnDisable()
+    {
+        throw new NotImplementedException();
+    }
+
+    void OnBeginTurn(Character c)
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    void DetermineCombatAction()
+    {
+        
+    }
+
+    bool HasCombatActionOfType(CombatAction.Type type)
+    {
+        
+    }
+
+    CombatAction GetCombatActionOfType(CombatAction.Type type)
     {
         
     }
