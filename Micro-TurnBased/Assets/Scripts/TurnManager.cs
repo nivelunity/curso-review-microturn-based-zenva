@@ -15,4 +15,12 @@ public class TurnManager : MonoBehaviour
     public event UnityAction<Character> OnEndTurn;
 
     public static TurnManager Instance;
+
+    void Awake()
+    {
+        if (Instance != null && Instance != this)
+            Destroy(gameObject);
+        else
+            Instance = this;
+    }
 }
