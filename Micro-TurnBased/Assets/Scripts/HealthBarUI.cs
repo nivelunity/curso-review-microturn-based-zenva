@@ -1,18 +1,34 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class HealthBarUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Image healthFill;
+    [SerializeField] private TextMeshProUGUI healthText;
+    [SerializeField] private Character character;
+
+    private void OnEnable()
     {
-        
+        character.OnHealthChange += OnUpdateHealth;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        
+        character.OnHealthChange -= OnUpdateHealth;
+    }
+
+    private void Start()
+    {
+        OnUpdateHealth();
+    }
+
+    void OnUpdateHealth()
+    {
+        healthFill.fillAmount = character.GetHealthPercentage();
+        healthText.text = character.CurHp + " / " + character.MaxHp;
     }
 }
