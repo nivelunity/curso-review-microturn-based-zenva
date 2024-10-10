@@ -12,17 +12,39 @@ public class CombatActionUI : MonoBehaviour
 
    private void OnEnable()
    {
-      throw new NotImplementedException();
+      TurnManager.Instance.OnBeginTurn += OnBeginTurn;
+      TurnManager.Instance.OnEndTurn += OnEndTurn;
    }
 
    private void OnDisable()
    {
-      throw new NotImplementedException();
+      TurnManager.Instance.OnBeginTurn -= OnBeginTurn;
+      TurnManager.Instance.OnEndTurn -= OnEndTurn;
    }
 
    void OnBeginTurn(Character character)
    {
+      if(!character.IsPlayer)
+         return;
       
+      visualContainer.SetActive(true);
+
+      for (int i = 0; i < combatActionButtons.Length; i++)
+      {
+         if (i < character.CombatActions.Count)
+         {
+            combatActionButtons[i].gameObject.SetActive(true);
+            CombatAction ca = character.CombatActions[i];
+
+            combatActionButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = ca.DisplayName;
+            combatActionButtons[i].onClick.RemoveAllListeners();
+            combatActionButtons[i].onClick.AddListener(()=> OnClickCombatAction(ca));
+         }
+         else
+         {
+            combatActionButtons[i].gameObject.SetActive(false);
+         }
+      }
    }
    
    void OnEndTurn(Character character)
