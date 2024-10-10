@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -16,5 +14,20 @@ public class Projectile : MonoBehaviour
    {
       target = projectileTarget;
       hitCallback = onHitCallback;
+   }
+
+   private void Update()
+   {
+      if(target == null)
+         return;
+
+      transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+
+      if (transform.position == target.transform.position)
+      {
+         target.TakeDamage(damage);
+         hitCallback?.Invoke();
+         Destroy(gameObject);
+      }
    }
 }
