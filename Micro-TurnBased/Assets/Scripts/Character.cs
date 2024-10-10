@@ -83,4 +83,9 @@ public class Character : MonoBehaviour
         
         TurnManager.Instance.EndTurn();
     }
+    
+    public float GetHealthPercentage()
+    {
+        return (float)CurHp / (float)MaxHp;
+    }
 }
