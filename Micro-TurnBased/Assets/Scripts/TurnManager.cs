@@ -10,6 +10,9 @@ public class TurnManager : MonoBehaviour
 
     private int curCharacterIndex = -1;
     public Character CurrentCharacter;
-    
-    
+
+    public event UnityAction<Character> OnBeginTurn;
+    public event UnityAction<Character> OnEndTurn;
+
+    public static TurnManager Instance;
 }
