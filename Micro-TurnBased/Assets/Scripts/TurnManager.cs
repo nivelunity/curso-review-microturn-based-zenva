@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,5 +23,35 @@ public class TurnManager : MonoBehaviour
             Destroy(gameObject);
         else
             Instance = this;
+    }
+
+    private void OnEnable()
+    {
+        throw new NotImplementedException();
+    }
+
+    private void OnDisable()
+    {
+        throw new NotImplementedException();
+    }
+
+    private void Start()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void BeginNextTurn()
+    {
+        
+    }
+
+    public void EndTurn()
+    {
+        
+    }
+
+    void OnCharacterDie(Character character)
+    {
+        
     }
 }
