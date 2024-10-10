@@ -1,18 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Projectile : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+   [SerializeField] private int damage;
+   [SerializeField] private float speed;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   private Character target;
+   
+   private UnityAction hitCallback;
+
+   public void Initialize(Character projectileTarget, UnityAction onHitCallback)
+   {
+      target = projectileTarget;
+      hitCallback = onHitCallback;
+   }
+
+   private void Update()
+   {
+      if(target == null)
+         return;
+
+      transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+
+      if (transform.position == target.transform.position)
+      {
+         target.TakeDamage(damage);
+         hitCallback?.Invoke();
+         Destroy(gameObject);
+      }
+   }
 }

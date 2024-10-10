@@ -158,6 +158,7 @@ MonoBehaviour:
   CombatActions:
   - {fileID: 11400000, guid: f0a64f0b58098c84285b1151e6ce9df0, type: 2}
   - {fileID: 11400000, guid: 22ee76f330a285342a76083e0c704998, type: 2}
+  - {fileID: 11400000, guid: 81870ddee945fea4cbc68ee9430ed16f, type: 2}
   opponent: {fileID: 916839832}
 --- !u!4 &43812113
 Transform:
@@ -1558,6 +1559,7 @@ MonoBehaviour:
   CombatActions:
   - {fileID: 11400000, guid: f0a64f0b58098c84285b1151e6ce9df0, type: 2}
   - {fileID: 11400000, guid: 22ee76f330a285342a76083e0c704998, type: 2}
+  - {fileID: 11400000, guid: 81870ddee945fea4cbc68ee9430ed16f, type: 2}
   opponent: {fileID: 43812112}
 --- !u!1 &1013114762
 GameObject:

@@ -56,7 +56,8 @@ public class Character : MonoBehaviour
         }
         else if (combatAction.ProjectilPrefab != null)
         {
-            
+            GameObject projectile = Instantiate(combatAction.ProjectilPrefab, transform.position, Quaternion.identity);
+            projectile.GetComponent<Projectile>().Initialize(opponent, TurnManager.Instance.EndTurn);
         }
         else if(combatAction.HealAmount > 0)
         {
