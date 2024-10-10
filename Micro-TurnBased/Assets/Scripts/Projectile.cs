@@ -12,4 +12,9 @@ public class Projectile : MonoBehaviour
    
    private UnityAction hitCallback;
 
+   public void Initialize(Character projectileTarget, UnityAction onHitCallback)
+   {
+      target = projectileTarget;
+      hitCallback = onHitCallback;
+   }
 }
