@@ -52,7 +52,7 @@ public class Character : MonoBehaviour
     {
         if (combatAction.Damage > 0)
         {
-            
+            StartCoroutine(AttackOpponet(combatAction));
         }
         else if (combatAction.ProjectilPrefab != null)
         {
@@ -60,11 +60,12 @@ public class Character : MonoBehaviour
         }
         else if(combatAction.HealAmount > 0)
         {
-            
+            Heal(combatAction.HealAmount);
+            TurnManager.Instance.EndTurn();
         }
     }
 
-    IEnumerator AttackOpponnet(CombatAction combatAction)
+    IEnumerator AttackOpponet(CombatAction combatAction)
     {
         while (transform.position != opponent.transform.position)
         {
