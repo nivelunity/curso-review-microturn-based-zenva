@@ -2866,9 +2866,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bd5d5dc3955dda4a97ff408b487472f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthFill: {fileID: 0}
-  healthText: {fileID: 0}
-  character: {fileID: 0}
+  healthFill: {fileID: 1492448495}
+  healthText: {fileID: 738629786}
+  character: {fileID: 43812112}
 --- !u!114 &2113033518
 MonoBehaviour:
   m_ObjectHideFlags: 0
