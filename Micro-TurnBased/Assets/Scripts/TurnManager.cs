@@ -52,11 +52,15 @@ public class TurnManager : MonoBehaviour
 
     public void EndTurn()
     {
-        
+        OnEndTurn?.Invoke(CurrentCharacter);
+        Invoke(nameof(BeginNextTurn), nexTurnDelay);
     }
 
     void OnCharacterDie(Character character)
     {
-        
-    }
+        if(character.IsPlayer)
+            Debug.Log("You lost!");
+        else
+            Debug.Log("You Win");
+    }   
 }
