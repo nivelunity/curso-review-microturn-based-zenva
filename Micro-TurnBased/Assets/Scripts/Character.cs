@@ -50,6 +50,17 @@ public class Character : MonoBehaviour
 
     public void CastCombatAction(CombatAction combatAction)
     {
-        
+        if (combatAction.Damage > 0)
+        {
+            
+        }
+        else if (combatAction.ProjectilPrefab != null)
+        {
+            
+        }
+        else if(combatAction.HealAmount > 0)
+        {
+            
+        }
     }
 }
