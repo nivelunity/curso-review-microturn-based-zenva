@@ -1,18 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TurnManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Character[] characters;
+    [SerializeField] private float nexTurnDelay = 1.0f;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private int curCharacterIndex = -1;
+    public Character CurrentCharacter;
+    
+    
 }
