@@ -9,17 +9,20 @@ public class EnemyAI : MonoBehaviour
 
     private void OnEnable()
     {
-        
+        TurnManager.Instance.OnBeginTurn += OnBeginTurn;
     }
 
     private void OnDisable()
     {
-        
+        TurnManager.Instance.OnBeginTurn -= OnBeginTurn;
     }
 
     void OnBeginTurn(Character c)
     {
-        
+        if (character == c)
+        {
+            DetermineCombatAction();
+        }
     }
 
     void DetermineCombatAction()
@@ -34,9 +37,9 @@ public class EnemyAI : MonoBehaviour
 
     CombatAction GetCombatActionOfType(CombatAction.Type type)
     {
-        List<CombatAction> availabeActions = 
+        List<CombatAction> availableActions = 
             character.CombatActions.FindAll(action => action.ActionType == type);
         
-        return availabeActions[Random.Range(0, availabeActions.Count)];
+        return availableActions[Random.Range(0, availableActions.Count)];
     }
 }
