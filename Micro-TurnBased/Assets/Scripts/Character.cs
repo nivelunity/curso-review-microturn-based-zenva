@@ -50,6 +50,37 @@ public class Character : MonoBehaviour
 
     public void CastCombatAction(CombatAction combatAction)
     {
+        if (combatAction.Damage > 0)
+        {
+            StartCoroutine(AttackOpponet(combatAction));
+        }
+        else if (combatAction.ProjectilPrefab != null)
+        {
+            
+        }
+        else if(combatAction.HealAmount > 0)
+        {
+            Heal(combatAction.HealAmount);
+            TurnManager.Instance.EndTurn();
+        }
+    }
+
+    IEnumerator AttackOpponet(CombatAction combatAction)
+    {
+        while (transform.position != opponent.transform.position)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, opponent.transform.position, 50 * Time.deltaTime);
+            yield return null;
+        }
         
+        opponent.TakeDamage(combatAction.Damage);
+        
+        while (transform.position != startPos)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, startPos, 20 * Time.deltaTime);
+            yield return null;
+        }
+        
+        TurnManager.Instance.EndTurn();
     }
 }
