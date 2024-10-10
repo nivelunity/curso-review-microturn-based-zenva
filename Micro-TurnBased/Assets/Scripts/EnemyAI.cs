@@ -1,7 +1,6 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 
 public class EnemyAI : MonoBehaviour
 {
@@ -10,12 +9,12 @@ public class EnemyAI : MonoBehaviour
 
     private void OnEnable()
     {
-        throw new NotImplementedException();
+        
     }
 
     private void OnDisable()
     {
-        throw new NotImplementedException();
+        
     }
 
     void OnBeginTurn(Character c)
@@ -30,11 +29,14 @@ public class EnemyAI : MonoBehaviour
 
     bool HasCombatActionOfType(CombatAction.Type type)
     {
-        
+        return character.CombatActions.Exists(action => action.ActionType == type);
     }
 
     CombatAction GetCombatActionOfType(CombatAction.Type type)
     {
+        List<CombatAction> availabeActions = 
+            character.CombatActions.FindAll(action => action.ActionType == type);
         
+        return availabeActions[Random.Range(0, availabeActions.Count)];
     }
 }
