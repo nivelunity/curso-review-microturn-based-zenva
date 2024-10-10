@@ -152,8 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11504183ac4e90e44bf073fb88d25038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurHp: 25
-  MaxHp: 25
+  CurHp: 15
+  MaxHp: 15
   IsPlayer: 0
   CombatActions:
   - {fileID: 11400000, guid: f0a64f0b58098c84285b1151e6ce9df0, type: 2}
@@ -189,7 +189,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healChanceCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.9
+      inSlope: -2.2887497
+      outSlope: -2.2887497
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.3074288
+      value: 0.19637239
+      inSlope: -1.4682904
+      outSlope: -1.4682904
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.55066663
+      value: 0.04653512
+      inSlope: -0.22944349
+      outSlope: -0.22944349
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.3111112
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -0.1035648
+      outSlope: -0.1035648
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4

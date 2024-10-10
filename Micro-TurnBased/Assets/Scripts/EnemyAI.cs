@@ -29,6 +29,22 @@ public class EnemyAI : MonoBehaviour
     {
         float healthPercentage = character.GetHealthPercentage();
         bool wantToHeal = Random.value < healChanceCurve.Evaluate(healthPercentage);
+
+        CombatAction action = null;
+
+        if (wantToHeal && HasCombatActionOfType(CombatAction.Type.Heal))
+        {
+            action = GetCombatActionOfType(CombatAction.Type.Heal);
+        }
+        else if(HasCombatActionOfType(CombatAction.Type.Attack))
+        {
+            action = GetCombatActionOfType(CombatAction.Type.Attack);
+        }
+        
+        if(action != null)
+            character.CastCombatAction(action);
+        else
+            TurnManager.Instance.EndTurn();
     }
 
     bool HasCombatActionOfType(CombatAction.Type type)
