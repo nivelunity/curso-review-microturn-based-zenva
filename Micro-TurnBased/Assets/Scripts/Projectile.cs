@@ -1,18 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Projectile : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+   [SerializeField] private int damage;
+   [SerializeField] private float speed;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   private Character target;
+   
+   private UnityAction hitCallback;
+
 }
