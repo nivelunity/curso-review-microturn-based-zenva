@@ -49,11 +49,11 @@ public class CombatActionUI : MonoBehaviour
    
    void OnEndTurn(Character character)
    {
-      
+      visualContainer.SetActive(false);
    }
 
    public void OnClickCombatAction(CombatAction combatAction)
    {
-      
+      TurnManager.Instance.CurrentCharacter.CastCombatAction(combatAction);
    }
 }
