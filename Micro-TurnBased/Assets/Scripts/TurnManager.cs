@@ -27,22 +27,27 @@ public class TurnManager : MonoBehaviour
 
     private void OnEnable()
     {
-        throw new NotImplementedException();
+        Character.OnDie += OnCharacterDie;
     }
 
     private void OnDisable()
     {
-        throw new NotImplementedException();
+        Character.OnDie -= OnCharacterDie;
     }
 
     private void Start()
     {
-        throw new NotImplementedException();
+        BeginNextTurn();
     }
 
     public void BeginNextTurn()
     {
-        
+        curCharacterIndex++;
+        if (curCharacterIndex == characters.Length)
+            curCharacterIndex = 0;
+
+        CurrentCharacter = characters[curCharacterIndex];
+        OnBeginTurn?.Invoke(CurrentCharacter);
     }
 
     public void EndTurn()
