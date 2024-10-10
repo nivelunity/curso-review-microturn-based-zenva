@@ -1321,7 +1321,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8e0964676135d34883439e05001a4b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characters: []
+  characters:
+  - {fileID: 916839832}
+  - {fileID: 43812112}
   nexTurnDelay: 1
   CurrentCharacter: {fileID: 0}
 --- !u!4 &1013114764
@@ -2009,6 +2011,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 179f5f35caf6afa46824eef7db6969ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  visualContainer: {fileID: 904511433}
+  combatActionButtons:
+  - {fileID: 667432775}
+  - {fileID: 182050646}
+  - {fileID: 763800871}
+  - {fileID: 1792733046}
 --- !u!1 &1792733044
 GameObject:
   m_ObjectHideFlags: 0
