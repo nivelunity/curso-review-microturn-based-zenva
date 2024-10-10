@@ -63,4 +63,23 @@ public class Character : MonoBehaviour
             
         }
     }
+
+    IEnumerator AttackOpponnet(CombatAction combatAction)
+    {
+        while (transform.position != opponent.transform.position)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, opponent.transform.position, 50 * Time.deltaTime);
+            yield return null;
+        }
+        
+        opponent.TakeDamage(combatAction.Damage);
+        
+        while (transform.position != startPos)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, startPos, 20 * Time.deltaTime);
+            yield return null;
+        }
+        
+        TurnManager.Instance.EndTurn();
+    }
 }
